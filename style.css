@@ -1,0 +1,223 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 50%;
+    background-image: cover;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(150deg, #5973b9 40%, #ffffff 55%);
+}
+
+footer {
+    background-color: #5973b9;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.header-img {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.header-img img {
+    /* position: absolute; */
+    object-fit: contain;
+    max-width: 80%;
+    display: block;
+    /* opacity: 25%; */
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.header-img h1 {
+    color: white;
+    position: absolute;
+    align-self: center;
+    bottom: 0;
+}
+
+.header-bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: .41rem 0 0;
+}
+
+.header-bio p {
+    width: 75%;
+    margin: .41rem;
+}
+
+.contact-icons {
+    display: flex;
+}
+
+.icon {
+    width: 50px;
+    font-size: 50px;
+}
+
+.small-icon {
+    width: 25px;
+    font-size: 25px;
+}
+
+section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdfdfd;
+    box-shadow: rgb(224, 224, 224) 0px 0px 5px 1px inset;
+    box-shadow: rgb(224, 224, 224) 0px 0px 5px 1px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+}
+
+.card {
+width: 75%;
+margin: .41rem 0;
+box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+border-radius: 5px;
+overflow: hidden;   
+}
+
+.project-image {
+    height: 150px;
+    width: 100%;
+}
+
+.project-bio {
+    width: 100%;
+    padding: .41rem;   
+}
+
+.project-bio p {
+    display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;       /* Change this number to your desired line count */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.name-icon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-icons .icon {
+    width: 25px;
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+.card h3 {
+    margin: .41rem 0;
+}
+
+footer { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.contact-info-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-info > p {
+    margin-bottom: 2.5rem;
+}
+
+.phone-email {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-container .contact-icons {
+    align-self: center;
+    color: black;
+}
+
+.footer-img {
+    align-self: flex-end;
+}
+
+.footer-img img {
+    display: block;
+    object-fit: cover;
+}
+
+@media (min-width: 600px) {
+    .header-content {
+        display: block;
+        /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+    }
+
+    .header-img {
+        float: left;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+
+    footer {
+        flex-direction: row;
+        
+    }
+}
