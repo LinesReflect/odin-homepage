@@ -23,13 +23,14 @@ time, mark, audio, video {
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 header {
     height: 50%;
     background-image: cover;
     margin-bottom: 1rem;
-    background-image: linear-gradient(150deg, #5973b9 40%, #ffffff 55%);
+    background-image: linear-gradient(150deg, #5973b9 30%, #ffffff 55%);
 }
 
 footer {
@@ -53,9 +54,10 @@ footer {
 
 .header-img img {
     /* position: absolute; */
-    object-fit: contain;
-    max-width: 80%;
+    object-fit: cover;
     display: block;
+    max-width: 400px;
+    max-height: 400px;
     /* opacity: 25%; */
 }
 
@@ -82,7 +84,7 @@ h2 {
 }
 
 .header-bio p {
-    width: 75%;
+    width: 85%;
     margin: .41rem;
 }
 
@@ -106,15 +108,14 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fdfdfd;
-    box-shadow: rgb(224, 224, 224) 0px 0px 5px 1px inset;
-    box-shadow: rgb(224, 224, 224) 0px 0px 5px 1px;
 }
 
 .card-container {
     display: grid;
     grid-template-columns: auto;
     place-items: center;
+    gap: 2rem;
+    margin: 1rem;
 }
 
 .card {
@@ -167,6 +168,7 @@ footer {
     flex-direction: column;
     align-items: center;
     color: white;
+    padding: 1rem;
 }
 
 .contact-info-container {
@@ -177,8 +179,18 @@ footer {
     gap: 1rem;
 }
 
+footer h2 {
+    text-align: center;
+}
+
 .contact-info > p {
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 1rem; */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
 
 .phone-email {
@@ -192,32 +204,135 @@ footer {
 }
 
 .footer-img {
-    align-self: flex-end;
+    height: 100%;
 }
 
 .footer-img img {
+    width: 100%;
     display: block;
     object-fit: cover;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 100vw;
+        min-height: 567px;
+    }
+
     .header-content {
         display: block;
-        /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+        justify-self: center;
+        background-color: white;
+        height: 400px;
+        width: 60%;
+        min-height: 300px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     }
 
     .header-img {
+        justify-content: flex-start;
         float: left;
+        box-sizing: border-box;
+        width: fit-content;
+        margin-left: -50px;
+        margin-top: -50px;
+        margin-right: .5rem;
+        display: flex;
+        position: relative;
+        /* left: -100px; */
+        /* margin: 0 -5rem -3rem 0; */
+    }
+
+    .header-img img {
+        max-width: 400px;
+        max-height: 350px;
+        /* object-fit: contain; */
+        /* opacity: 0; */
+    }
+
+    .header-img h1 {
+        position: absolute;
+        left: 100px;
+        top: -300px;
+        min-width: 300px;
+        text-align: center;
+        font-size: 3rem;
+
+    }
+
+    .header-bio {
+        /* max-height: 400px; */
+        display: inline;
+        margin: 0;
+        padding: 0;
+        /* width: 600px; */
+        overflow: hidden;
+        
+    }
+
+    .header-bio h2 {
+        text-align: center;
+    }
+
+    .header-bio p {
+        width: 90%;
+        justify-self: center;
+        font-size: clamp(1rem, 2vw, 2rem);
+    }
+
+    .header-bio .contact-icons {
+        justify-self: end;
+        align-self: flex-end;
+        margin: -.5rem 0 0;
+    }
+
+    section {
+        width: 85%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-title {
+        align-self: flex-start;
     }
 
     .card-container {
-        display: grid;
+        width: 100%;
         grid-template-columns: 1fr 1fr;
         place-items: center;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 100%;
     }
 
     footer {
         flex-direction: row;
-        
+        gap: 1rem;
+
+    }
+
+    .contact-info-container {
+        width: 50%;
+    }
+
+    .contact-info {
+    }
+
+    footer h2 {
+        text-align: start;
+    }
+
+    .contact-info-container .contact-icons {
+        align-self: flex-start
+    }
+
+    .footer-img {
+        width: 50%;
+        align-self: center;
     }
 }
