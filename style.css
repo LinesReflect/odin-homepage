@@ -30,7 +30,7 @@ main {
 header {
     height: 50%;
     background-image: cover;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     background-image: linear-gradient(150deg, #5973b9 30%, #ffffff 55%);
 }
 
@@ -43,6 +43,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-items: center;
+    padding: 1rem;
 }
 
 .header-img {
@@ -54,20 +55,17 @@ footer {
 }
 
 .header-img img {
-    /* position: absolute; */
     object-fit: cover;
     display: block;
     max-width: 400px;
     max-height: 400px;
-    /* opacity: 25%; */
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
-.header-img h3 {
-    font-size: 2.5rem;
+.header-img h2 {
     color: white;
     position: absolute;
     align-self: center;
@@ -81,7 +79,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3.5rem;
+    font-size: 1.75rem;
     margin: .41rem 0 0;
 }
 
@@ -92,11 +90,21 @@ h2 {
 
 .contact-icons {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon {
-    width: 50px;
-    font-size: 50px;
+    width: 40px;
+    font-size: 40px;
+    transition: transform .5s;
+}
+
+.icon:hover {
+    border-radius: 10px;
+    background-color: rgba(173, 173, 173, 25%);
+    cursor: pointer;
+    transform: scale(1.15);
 }
 
 .small-icon {
@@ -105,6 +113,7 @@ h2 {
 }
 
 section {
+    margin: .5rem 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -121,27 +130,65 @@ section {
 }
 
 .card {
-width: 75%;
-margin: .41rem 0;
-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-border-radius: 5px;
-overflow: hidden;   
+    width: 75%;
+    margin: .41rem 0;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 5px;
+    overflow: hidden;   
+    transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.card:hover .project-image::after {
+    backdrop-filter: none;
 }
 
 .project-image {
-    height: 150px;
-    width: 100%;
+    
+    height: 200px;
+    overflow: hidden;
+    position: relative;
 }
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.082);
+    backdrop-filter: blur(2px);
+}
+
+.project-image:hover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.082);
+    backdrop-filter: blur(0px);
+    cursor: pointer;
+}
+
+.project-image img {
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    object-position: top left;
+} 
 
 .project-bio {
     width: 100%;
-    padding: .41rem;   
+    margin: .5rem 0;
+    padding: 0 .5rem;   
 }
 
 .project-bio p {
     display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;       /* Change this number to your desired line count */
+  -webkit-line-clamp: 3; 
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -161,33 +208,39 @@ overflow: hidden;
     margin: .41rem 0;
 }
 
-footer { 
+footer {
+    width: 100%;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info-img-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     color: white;
     padding: 1rem;
 }
 
 .contact-info-container {
-    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
 
-footer h2 {
+.contact-info-img-container h2 {
     text-align: center;
 }
 
-.contact-info > p {
-    /* margin-bottom: 1rem; */
-}
-
 .contact-info {
+    width: 85%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: .5rem;
 }
 
@@ -202,13 +255,15 @@ footer h2 {
 }
 
 .footer-img {
+    padding: 1rem;
     height: 100%;
 }
 
 .footer-img img {
-    width: 100%;
+    width: 75%;
     display: block;
     object-fit: cover;
+    justify-self: center;
 }
 
 @media (min-width: 768px) {
@@ -217,7 +272,7 @@ footer h2 {
         justify-content: center;
         align-items: center;
         min-width: 100vw;
-        min-height: 567px;
+        min-height: 550px;
     }
 
     .header-content {
@@ -240,33 +295,27 @@ footer h2 {
         margin-right: .5rem;
         display: flex;
         position: relative;
-        /* left: -100px; */
-        /* margin: 0 -5rem -3rem 0; */
     }
 
     .header-img img {
         max-width: 400px;
         max-height: 350px;
-        /* object-fit: contain; */
-        /* opacity: 0; */
     }
 
-    .header-img h3 {
+    .header-img h2 {
         position: absolute;
         left: 100px;
-        top: -300px;
+        top: -305px;
         min-width: 300px;
         text-align: center;
-        font-size: 3rem;
+        font-size: 1.25rem;
 
     }
 
     .header-bio {
-        /* max-height: 400px; */
         display: inline;
         margin: 0;
         padding: 0;
-        /* width: 600px; */
         overflow: hidden;
         
     }
@@ -278,7 +327,7 @@ footer h2 {
     .header-bio p {
         width: 90%;
         justify-self: center;
-        font-size: clamp(1rem, 2vw, 1.75rem);
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
     }
 
     .header-bio .contact-icons {
@@ -288,7 +337,7 @@ footer h2 {
     }
 
     section {
-        width: 85%;
+        width: 70%;
         justify-content: center;
         align-items: center;
     }
@@ -300,7 +349,7 @@ footer h2 {
     .card-container {
         width: 100%;
         grid-template-columns: 1fr 1fr;
-        place-items: center;
+        place-items: start;
         justify-content: space-between;
     }
 
@@ -308,27 +357,56 @@ footer h2 {
         width: 100%;
     }
 
-    footer {
+    .project-image {
+        height: 200px;
+        width: 600px;
+        position: relative;
+    }
+    
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top left;
+    } 
+
+    .contact-info-img-container {
+        width: 65%;
         flex-direction: row;
         gap: 1rem;
-
-    }
-
-    .contact-info-container {
-        width: 50%;
-    }
-
-    footer h2 {
-        text-align: start;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1rem;
     }
 
     .contact-info-container .contact-icons {
-        align-self: flex-start
+        align-self: center
+    }
+
+    .contact-info {
+        align-items: center;
+        justify-content: end;
+        text-align: center;
+    }
+
+    .contact-info > * {
+        padding: .5rem;
+    }
+
+    .contact-info h2 {
+        align-self: center;
+        padding: 1rem;
     }
 
     .footer-img {
-        width: 50%;
-        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: fit-content;
+    }
+
+    .footer-img img {
+        width: 400px;
     }
 }
 
@@ -338,7 +416,9 @@ footer h2 {
     }
 
     .header-content {
-        width: 90%;
+        width: 70%;
+        max-height: clamp(100px, 100vh, 300px);
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
         gap: 0;
@@ -349,23 +429,16 @@ footer h2 {
         float: left;
         box-sizing: border-box;
         width: fit-content;
-        /* margin-left: -50px; */
         margin: 0 .5rem 0 0;
-        /* margin-right: .5rem; */
         display: flex;
         position: relative;
-        /* left: -100px; */
-        /* margin: 0 -5rem -3rem 0; */
     }
 
     .header-img img {
-        
-        max-height: 550px;
-        /* object-fit: contain; */
-        /* opacity: 0; */
+        max-height: 350px;
     }
 
-    .header-img h3 {
+    .header-img h2 {
         position: absolute;
         bottom: 0;
         margin: 0;
@@ -388,12 +461,24 @@ footer h2 {
     .card-container {
         width: 100%;
         grid-template-columns: 1fr 1fr 1fr;
-        place-items: center;
-        justify-content: space-between;
+        place-items: start center;
     }
 
     .card {
-        min-width: 25%;
-        max-width: 85%;
+        width: clamp(200px, 100%, 300px);
+    }
+
+    .project-image {
+        height: 150px;
+        width: 500px;
+        margin-bottom: .5rem;
+        position: relative;
+    }
+    
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top left;
     }
 }
