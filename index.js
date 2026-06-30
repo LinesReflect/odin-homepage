@@ -57,7 +57,6 @@ function getReposExternalLink(repos) {
     
     repos.forEach(async (repo, index) => {
         if (repo.homepage) {
-            console.log("GOOOOOOOOOOOODDDDD")
             setRepoExternalLink(repo.homepage, index + 1);
         } else {
             document.getElementById(`card-${index + 1}-external-link`).style.display = 'none';
